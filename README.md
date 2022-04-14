@@ -20,5 +20,9 @@ purely just ".ENV". We call upon our .ENV file repeatedly throughout this entire
 To run this website, open up the Python script "Boot.py" and press run! It's as simple as that. This is going to be hosted on http://127.0.0.1:5000. Enter in that URL
 after you run the script and it should all boot up and work! :)
 
+# Brief overview.
+Here is a youtube video showcasing the website!
+https://youtu.be/uaLZtkuYqHI
+
 # Thank you!
 Thank you for viewing and possibly testing my projects! I had a ton of fun making this and can't wait to see what I come up with for my next one!
