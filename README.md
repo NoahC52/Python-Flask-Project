@@ -1,5 +1,5 @@
 # Hello! Welcome to my test project combining all my skills and projects I've learned into one central website and hub!
-This project uses Python, Flask, HTML, CSS, Bootstrap, SignalWire APIs, and OpenWeather API. Overall this is the most complicated project I've done yet,
+This project uses Python, Flask, HTML, CSS, Bootstrap, Javascript, SignalWire APIs, and OpenWeather API. Overall this is the most complicated project I've done yet,
 but I'm very proud of the end result. I hope you enjoy testing it and viewing it as much as I did making it. :)
 
 # What the various APIs are used for.
