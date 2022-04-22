@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block head %}
+<div class="container-full-bg">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">OpenWeather API & Javascript</h1>
+            <p class="lead">With Javascript, we can in real-time update the site without even reloading the webpage
+            or transferring to another. This coupled with Openweather API allows us to display the weather from any
+            zipcode & country in the world in seconds.</p>
+        </div>
+    </div>
+    {% endblock %}
+{% block content %}
+
+
+
+    <div class="form-floating">
+        <h2>Enter your country:</h2>
+        <p><input class="form-control" = "text" id="country" placeholder="Please note: we use ISO 3166 country codes.
+ For example, The United States would simply be 'US'" /></p>
+    </div>
+
+      <div class="form-floating">
+        <h2>Enter your zipcode:</h2>
+        <p><input class="form-control" = "text" id="zipcode" placeholder="Zip code goes here." /></p>
+    </div>
+    <input type="button" id="btn1" onclick="weather_f()" value="Submit">
+
+
+<div class="testing"><h1 id="name_place" class="display-4"></h1></div>
+<div class="testing2"><h1 id="temp" class="display-4"></h1></div>
+<div class="testing3"><h1 id="humidity" class="display-4"></h1></div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="static/js/weather.js"></script>
+
+
+{% endblock %}

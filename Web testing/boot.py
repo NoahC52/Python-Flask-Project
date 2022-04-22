@@ -42,6 +42,11 @@ def sms():
     return render_template('sms.html')
 
 
+@app.route("/js_weather", methods=['GET', 'POST'])
+def js_weather():
+    return render_template('js_weather.html')
+
+
 # This is what we use to send and receive HTTP request relating to our SMS.
 @app.route("/sms_handle", methods=['GET', 'POST'])
 def sms_handle():
