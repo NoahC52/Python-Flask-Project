@@ -41,7 +41,7 @@ def weather():
 def sms():
     return render_template('sms.html')
 
-
+# The page for our Javascript weather app
 @app.route("/js_weather", methods=['GET', 'POST'])
 def js_weather():
     return render_template('js_weather.html')
