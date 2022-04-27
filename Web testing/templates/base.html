@@ -22,6 +22,16 @@
         <a class="nav-link" href="{{ url_for('weather') }}">Weather</a>
         <a class="nav-link" href="{{ url_for('sms') }}">SMS</a>
         <a class="nav-link" href="{{ url_for('js_weather') }}">Weather JS</a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Grocery List
+        </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ url_for('grocery') }}">Grocery list</a>
+                                <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{{ url_for('create') }}">Create a item</a>
+
+        </div>
       </div>
     </div>
   </div>
@@ -40,4 +50,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
-

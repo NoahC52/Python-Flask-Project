@@ -2,10 +2,11 @@
 import os
 import requests
 from dotenv import load_dotenv
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for, flash, redirect
 from signalwire.rest import Client as signalwire_client
 import re
 from pyngrok import ngrok
+import sqlite3
 
 # Load our .env for our credentials.
 load_dotenv()
@@ -22,6 +23,14 @@ client = signalwire_client(projectID, authToken, signalwire_space_url=spaceURL)
 
 # initializing Flask
 app = Flask(__name__)
+app.secret_key = "ew12453412"
+
+
+# Get a connection to our database
+def get_db_connection():
+    conn = sqlite3.connect('database.db')
+    conn.row_factory = sqlite3.Row
+    return conn
 
 
 # Our home page.
@@ -41,10 +50,41 @@ def weather():
 def sms():
     return render_template('sms.html')
 
+
 # The page for our Javascript weather app
 @app.route("/js_weather", methods=['GET', 'POST'])
 def js_weather():
     return render_template('js_weather.html')
+
+
+# The page for our grocery list app
+@app.route("/grocery", methods=['GET', 'POST'])
+def grocery():
+    # Here we connect to our database and retrieve the data
+    conn = get_db_connection()
+    list_grocery = conn.execute('SELECT * FROM grocery').fetchall()
+    conn.close()
+    return render_template('grocery.html', grocery=list_grocery)
+
+
+# The page that we use to create items for our grocery list
+@app.route('/create', methods=('GET', 'POST'))
+def create():
+    if request.method == 'POST':
+        title = request.form['title']
+        # If the user didn't enter a title
+        if not title:
+            flash('Title is required!')
+        else:
+            # Here we add the user entered data into the database
+            conn = get_db_connection()
+            conn.execute('INSERT INTO grocery (title) VALUES (?)',
+                         (title,))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('grocery'))
+
+    return render_template('create.html')
 
 
 # This is what we use to send and receive HTTP request relating to our SMS.

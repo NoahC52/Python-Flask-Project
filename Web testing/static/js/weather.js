@@ -1,7 +1,7 @@
 // Api stuff
-let url_final = "https://api.openweathermap.org/data/2.5/weather?lat=";
-let key = "OPENWEATHER API KEY GOES HERE!";
-let api = "https://api.openweathermap.org/geo/1.0/zip?zip=";
+const url_final = "https://api.openweathermap.org/data/2.5/weather?lat=";
+const key = "&appid=f1cabbb0e1f9b185fd3b70cd8240f3b0";
+const api = "https://api.openweathermap.org/geo/1.0/zip?zip=";
 
 async function weather_f() {
     let country = document.getElementById("country");
