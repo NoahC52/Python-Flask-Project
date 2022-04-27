@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block head %}
+<div class="container-full-bg">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">Flask & SQLite Powered Grocery List</h1>
+            <p class="lead">SQLite makes it easy to store data that can be retrieved at a later date.
+            This allows us to use Flask to display and also gather data from a user to store and be retrieved.
+            With all of this, we can make apps like this grocery list creator with ease!</p>
+        </div>
+    </div>
+    {% endblock %}
+{% block content %}
+
+    <h1>{% block title %} Grocery List {% endblock %}</h1>
+    {% for list_grocery in grocery %}
+        <a href="#">
+            <h2>{{ list_grocery['title'] }}</h2>
+        </a>
+        <span class="badge badge-dark">{{ list_grocery['created'] }}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}
