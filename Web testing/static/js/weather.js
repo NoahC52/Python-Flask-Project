@@ -1,6 +1,6 @@
 // Api stuff
 const url_final = "https://api.openweathermap.org/data/2.5/weather?lat=";
-const key = "&appid=f1cabbb0e1f9b185fd3b70cd8240f3b0";
+const key = "API KEY GOES HERE;
 const api = "https://api.openweathermap.org/geo/1.0/zip?zip=";
 
 async function weather_f() {
